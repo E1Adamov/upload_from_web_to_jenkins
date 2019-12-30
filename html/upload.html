@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alt-D upload</title>
+    <link rel="stylesheet" type="text/css" href="alt_d.css">
+    <script type="text/javascript" src="jszip.js" defer></script>
+    <script type="text/javascript" src="altDUpload.js" defer></script>
+</head>
+
+<body>
+    <h1>Upload Alt-D field report</h1>
+
+    <div id="success" class="success">
+        <h2 id="progressText"></h2>
+    </div>
+
+    <form id="AldDUploadForm" method="POST" action="upload_form" enctype="multipart/form-data">
+        <label for="jiraIssueNumber">Jira issue number  </label>
+        <input id="jiraIssueNumber" name="jiraIssueNumber" required pattern="AURORA-\d{5}" value="AURORA-" placeholder="AURORA-XXXXX"><br>
+        <br>
+
+        <label for="altDDumpFile">Alt-D dump <i>(4 GB max)</i> </label>
+        <input id="altDDumpFile" name="altDDumpFile" type="file" required><br>
+        <br>
+
+        <label for="supportFiles">Support files  </label>
+        <input id="supportFiles" name="supportFiles" type="file" multiple><br>
+        <br>
+
+        <label for="comments" class="text-area-title">Comments <i>(no special symbols)</i></label>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+        <br>
+
+        <button id="submitBtn" type="submit">Submit</button>
+    </form>
+</body>
+</html>
